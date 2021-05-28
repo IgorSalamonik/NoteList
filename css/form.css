@@ -4,7 +4,7 @@
     border: solid 0px grey;
     display: flex;
     flex-basis: auto;
-    justify-content: space-between;
+    justify-content: space-around;
 background-color: white;
 }
 
@@ -12,5 +12,6 @@ background-color: white;
     width: 70%;
     padding: 0px;
     padding: 5px 5px 5px 5px;
+    
     
 }

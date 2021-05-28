@@ -53,9 +53,9 @@
         // Dodawane elementy to kolejne elementy listy
         for (const task of tasks) {
             htmlString += `
-            <li${task.done ? " style=\"text-decoration: line-through\"" : ""}>
-            <button class="js-done">Done?</button>
-            <button class="js-remove">Delete</button>
+            <li class = "list__element" ${task.done ? " style=\"text-decoration: line-through\"" : ""}>
+            <button class="js-done button__done">Done?</button>
+            <button class="js-remove button__remove">Delete</button>
             ${task.content}
             </li>
             `;

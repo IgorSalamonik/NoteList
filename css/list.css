@@ -1,0 +1,15 @@
+.list {
+    list-style-type: none;
+   
+}
+
+.list__element{
+    bdisplay: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 5px;
+    background-color: white;
+    
+    
+}
