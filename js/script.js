@@ -9,6 +9,44 @@
             done: true,
         },
     ];
+
+    const addNewTask = (newTaskContent) => {
+        tasks.push({
+            content: newTaskContent,
+        });
+        render();
+    };
+
+    const removeTask = (taskIndex) => {
+        tasks.splice(taskIndex, 1);
+        render();
+    };
+
+    const toggleTaskDone = (taskIndex) => {
+        tasks[taskIndex].done = !tasks[taskIndex].done;
+        render();
+    };
+
+    const bindEvents = () => {
+        const removeButtons = document.querySelectorAll(".js-remove")
+
+        removeButtons.forEach((removeButton, taskIndex) => {  // Kto?
+            removeButton.addEventListener("click", () => { // Co?
+                tasks.splice(taskIndex, 1); // Jak?
+                render();
+            });
+        });
+
+        const toggleDoneButtons = document.querySelectorAll(".js-done")
+
+        toggleDoneButtons.forEach((toggleDoneButton, taskIndex) => {  // Kto?
+            toggleDoneButton.addEventListener("click", () => { // Co?
+                toggleTaskDone(taskIndex);
+                render();
+            });
+        });
+    };
+
     // Wstawianie treści do HTMLa
     const render = () => {
         let htmlString = "";
@@ -16,6 +54,8 @@
         for (const task of tasks) {
             htmlString += `
             <li${task.done ? " style=\"text-decoration: line-through\"" : ""}>
+            <button class="js-done">Done?</button>
+            <button class="js-remove">Delete</button>
             ${task.content}
             </li>
             `;
@@ -23,17 +63,10 @@
 
         document.querySelector(".js-tasks").innerHTML = htmlString;
 
+        bindEvents();
     };
 
-    const addNewTask = (newTaskContent) => {
-        tasks.push({
-            content: newTaskContent,
-        });
-
-        render();
-
-
-    }
+    // Wypełnianie formularza 
     const onFormSubmit = (event) => {
         //Blokada automatycznego wysłania formularza 
         event.preventDefault();
@@ -45,6 +78,7 @@
 
         addNewTask(newTaskContent);
     }
+
 
     // Funkcja init
     const init = () => {
