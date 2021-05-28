@@ -1,0 +1,11 @@
+.body {
+    background-color:lightgrey;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.header {
+    display: flex;
+    border: 2 black;
+    padding: 10px;
+}
+
