@@ -1,10 +1,18 @@
 .main {
     max-width: 900px;
-    border: 10px solid black;
-    padding: 0 20px;
+    padding: 0 50px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    background-color: brown;
+    flex-wrap: wrap;
+    background-color: rgb(211, 211, 211);
+}
 
+.description {
+    padding: 20px;
+    border:  0px;
+    margin-top: 2px auto;
+    background-color: white;
+    font-weight: bold;
+   
 }
