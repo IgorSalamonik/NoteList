@@ -1,13 +1,5 @@
 {
     const tasks = [
-        {
-            content: "nagrać lekcję",
-            done: false,
-        },
-        {
-            content: "zjeść pierogi",
-            done: true,
-        },
     ];
 
     const addNewTask = (newTaskContent) => {
@@ -53,10 +45,10 @@
         // Dodawane elementy to kolejne elementy listy
         for (const task of tasks) {
             htmlString += `
-            <li class = "list__element" ${task.done ? " style=\"text-decoration: line-through\"" : ""}>
-            <button class="js-done button__done">Done?</button>
-            <button class="js-remove button__remove">Delete</button>
-            ${task.content}
+            <li class = "list__element">
+            <button class="js-done list__button list__button--done">Zrobione</button>
+            <span class="list__taskContent${task.done ? " list__taskContent--done" : ""}">${task.content}</span>
+            <button class="js-remove list__button list__button--remove">Usuń</button>
             </li>
             `;
         };
@@ -73,6 +65,7 @@
         const newTaskContent = document.querySelector(".js-newTask").value.trim();
         console.log(newTaskContent)
         if (newTaskContent === "") {
+
             return;
         };
 

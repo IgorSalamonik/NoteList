@@ -8,8 +8,13 @@
     background-color: rgb(211, 211, 211);
 }
 
+.header {
+    padding: 10px;
+    max-width: 900px;
+}
+
 .description {
-    padding: 20px;
+    padding: 0 10px;
     border:  0px;
     margin-top: 2px auto;
     background-color: white;
